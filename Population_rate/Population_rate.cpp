@@ -8,46 +8,45 @@ int main()
 	cout << "Enter the current population: " << endl;
 	cin >> population;
 
-	int yearn;
+	int yearsnumber;
 	cout << "Enter the nubmer of years: " << endl;
-	cin >> yearn;
+	cin >> yearsnumber;
 
-	int monthn = yearn * 12;
+	const int monthsnumber = yearsnumber * 12;
+	const int birth_rate = 7;
+	const int death_rate = 13;
+	const int immigrant_rate = 45;
 
-	int monthseconds = 24 * 60 * 60;
+	const int monthseconds = 24 * 60 * 60;
 
-	int mbirth = monthseconds / 7;
-	int mdeath = monthseconds / 13;
-	int mimg = monthseconds / 45;
-	int mincrate = mbirth + mimg - mdeath;
+	int monthlybirths = monthseconds / birth_rate;
+	int monthlydeaths = monthseconds / death_rate;
+	int monthlyimmigrants = monthseconds / immigrant_rate;
+	int monthlyincrementrate = monthlybirths + monthlyimmigrants - monthlydeaths;
 
 	cout << endl;
 
-	int j = 1;
-	int mpopulation = population;
-	while (j <= monthn)
+	int monthlypopulation = population;
+	for (int j = 1; j <= monthsnumber; j++)
 	{
-		population = population + mincrate;
+		population = population + monthlyincrementrate;
 		cout << "The population after " << j << " months is: " << population << endl;
-		j++;
 	}
 
 	cout << endl << "===================================" << endl << endl;
 
-	int yearseconds = 365 * 24 * 60 * 60;
+	const int yearseconds = 365 * 24 * 60 * 60;
 
-	int ybirth = yearseconds / 7;
-	int ydeath = yearseconds / 13;
-	int yimg = yearseconds / 45;
-	int yincrate = ybirth + yimg - ydeath;
+	int yearlybirths = yearseconds / birth_rate;
+	int yearlydeaths = yearseconds / death_rate;
+	int yearlyimmigrants = yearseconds / immigrant_rate;
+	int yearlyincrementrate = yearlybirths + yearlyimmigrants - yearlydeaths;
 
-	int i = 1;
-	int ypopulation = population;
-	while (i <= yearn)
+	int yearlypopulation = population;
+	for (int i = 1; i <= yearsnumber; i++)
 	{
-		population = population + yincrate;
+		population = population + yearlyincrementrate;
 		cout << "The population after " << i << " years is: " << population << endl;
-		i++;
 	}
 
 	return 0;
