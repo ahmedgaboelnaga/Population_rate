@@ -2,6 +2,10 @@
 
 using namespace std;
 
+const int birth_rate = 7;
+const int death_rate = 13;
+const int immigrant_rate = 45;
+
 int main()
 {
 	int population = 0;
@@ -13,16 +17,11 @@ int main()
 	cin >> yearsnumber;
 
 	const int monthsnumber = yearsnumber * 12;
-	const int birth_rate = 7;
-	const int death_rate = 13;
-	const int immigrant_rate = 45;
-
 	const int monthseconds = 24 * 60 * 60;
-
-	int monthlybirths = monthseconds / birth_rate;
-	int monthlydeaths = monthseconds / death_rate;
-	int monthlyimmigrants = monthseconds / immigrant_rate;
-	int monthlyincrementrate = monthlybirths + monthlyimmigrants - monthlydeaths;
+	const int monthlybirths = monthseconds / birth_rate;
+	const int monthlydeaths = monthseconds / death_rate;
+	const int monthlyimmigrants = monthseconds / immigrant_rate;
+	const int monthlyincrementrate = monthlybirths + monthlyimmigrants - monthlydeaths;
 
 	cout << endl;
 
@@ -36,11 +35,10 @@ int main()
 	cout << endl << "===================================" << endl << endl;
 
 	const int yearseconds = 365 * 24 * 60 * 60;
-
-	int yearlybirths = yearseconds / birth_rate;
-	int yearlydeaths = yearseconds / death_rate;
-	int yearlyimmigrants = yearseconds / immigrant_rate;
-	int yearlyincrementrate = yearlybirths + yearlyimmigrants - yearlydeaths;
+	const int yearlybirths = yearseconds / birth_rate;
+	const int yearlydeaths = yearseconds / death_rate;
+	const int yearlyimmigrants = yearseconds / immigrant_rate;
+	const int yearlyincrementrate = yearlybirths + yearlyimmigrants - yearlydeaths;
 
 	int yearlypopulation = population;
 	for (int i = 1; i <= yearsnumber; i++)
