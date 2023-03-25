@@ -7,7 +7,7 @@ const int death_rate = 13;
 const int immigrant_rate = 45;
 
 
-int caculate_monthly_growth(int population, int monthsnumber)
+int monthlygrowth(int population, int monthsnumber)
 {
 	const int monthseconds = 24 * 60 * 60;
 	const int monthlybirths = monthseconds / birth_rate;
@@ -27,7 +27,7 @@ int caculate_monthly_growth(int population, int monthsnumber)
 	return population;
 }
 
-int calculate_yearly_growth(int population, int yearsnumber)
+int yearlygrowth(int population, int yearsnumber)
 {
 	const int yearseconds = 365 * 24 * 60 * 60;
 	const int yearlybirths = yearseconds / birth_rate;
@@ -59,11 +59,11 @@ int main()
 
 	cout << endl;
 
-	population = caculate_monthly_growth(population, monthsnumber);
+	population = monthlygrowth(population, monthsnumber);
 
 	cout << endl << "===================================" << endl << endl;
 
-	population = calculate_yearly_growth(population, yearsnumber);
+	population = yearlygrowth(population, yearsnumber);
 
 	return 0;
 }
