@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int monthlygrowth(int population, int monthsnumber)
+int monthlygrowth(int population, int monthsnumber,int birthrate, int deathrate, int immigrantrate)
 {
 	const int monthseconds = 24 * 60 * 60;
 	const int monthlybirths = monthseconds / birthrate;
@@ -22,7 +22,7 @@ int monthlygrowth(int population, int monthsnumber)
 	return population;
 }
 
-int yearlygrowth(int population, int yearsnumber)
+int yearlygrowth(int population, int yearsnumber, int birthrate, int deathrate, int immigrantrate)
 {
 	const int yearseconds = 365 * 24 * 60 * 60;
 	const int yearlybirths = yearseconds / birthrate;
