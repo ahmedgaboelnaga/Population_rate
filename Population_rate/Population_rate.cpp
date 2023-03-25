@@ -2,17 +2,17 @@
 
 using namespace std;
 
-const int birth_rate = 7;
-const int death_rate = 13;
-const int immigrant_rate = 45;
+const int birthrate = 7;
+const int deathrate = 13;
+const int immigrantrate = 45;
 
 
 int monthlygrowth(int population, int monthsnumber)
 {
 	const int monthseconds = 24 * 60 * 60;
-	const int monthlybirths = monthseconds / birth_rate;
-	const int monthlydeaths = monthseconds / death_rate;
-	const int monthlyimmigrants = monthseconds / immigrant_rate;
+	const int monthlybirths = monthseconds / birthrate;
+	const int monthlydeaths = monthseconds / deathrate;
+	const int monthlyimmigrants = monthseconds / immigrantrate;
 	const int monthlyincrementrate = monthlybirths + monthlyimmigrants - monthlydeaths;
 
 	cout << endl;
@@ -30,9 +30,9 @@ int monthlygrowth(int population, int monthsnumber)
 int yearlygrowth(int population, int yearsnumber)
 {
 	const int yearseconds = 365 * 24 * 60 * 60;
-	const int yearlybirths = yearseconds / birth_rate;
-	const int yearlydeaths = yearseconds / death_rate;
-	const int yearlyimmigrants = yearseconds / immigrant_rate;
+	const int yearlybirths = yearseconds / birthrate;
+	const int yearlydeaths = yearseconds / deathrate;
+	const int yearlyimmigrants = yearseconds / immigrantrate;
 	const int yearlyincrementrate = yearlybirths + yearlyimmigrants - yearlydeaths;
 
 	int yearlypopulation = population;
