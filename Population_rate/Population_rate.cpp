@@ -2,11 +2,6 @@
 
 using namespace std;
 
-const int birthrate = 7;
-const int deathrate = 13;
-const int immigrantrate = 45;
-
-
 int monthlygrowth(int population, int monthsnumber)
 {
 	const int monthseconds = 24 * 60 * 60;
@@ -56,14 +51,17 @@ int main()
 	cin >> yearsnumber;
 
 	const int monthsnumber = yearsnumber * 12;
+	const int birthrate = 7;
+	const int deathrate = 13;
+	const int immigrantrate = 45;
 
 	cout << endl;
 
-	population = monthlygrowth(population, monthsnumber);
+	population = monthlygrowth(population, monthsnumber, birthrate, deathrate, immigrantrate);
 
 	cout << endl << "===================================" << endl << endl;
 
-	population = yearlygrowth(population, yearsnumber);
+	population = yearlygrowth(population, yearsnumber, birthrate, deathrate, immigrantrate);
 
 	return 0;
 }
